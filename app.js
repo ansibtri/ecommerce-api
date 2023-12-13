@@ -9,6 +9,7 @@ const cookieParser = require("cookie-parser"); // importing cookie parser
 const bodyParser = require("body-parser"); // importing body parser
 const session = require("express-session"); // importing express session
 const connectDB = require("./config/db"); // importing database connection function
+const  serverless = require("serverless-http"); // importing serverless
 
 const Product = require('./routes/product'); // importing product routes
 const Category = require('./routes/category'); // importing category routes
@@ -50,8 +51,10 @@ app.use('/api/auth', Auth)// for authentcation routes
 
 
 // for uploading images
-
 const PORT = process.env.PORT || 3000; // port number
+
 app.listen(PORT,()=>{
     console.log(`Server is running on port ${PORT}`);
 })
+const handler = serverless(app);
+module.exports = handler 
