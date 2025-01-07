@@ -11,8 +11,8 @@ const sendMail = async (req,res,email, password) =>{
             port: 465, // true for 465, false for other ports
             host: "smtp.gmail.com",
             auth:{
-                user: "ansibtri961@gmail.com",
-                pass: "zhie xaij tjle soxo"
+                user: "youremail@example.com",
+                pass: "password"
             },
             secure: true
         });
